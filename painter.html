@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Understanding JavaScript
+        </title>
+    </head>
+ 
+<body>
+<h2>Painter entry Pillalamarri Pravalika</h2>
+<form>
+    <label for="painterName"> The hidden painter name </label>
+    <input type ="password" id="painterName" name="painterName" value="Monet"> <br>
+    <label for="guessPainterName">Guess the painter </label>
+    <input type ="text" id="guessPainterName" name="guessPainterName" autofocus> <br> <br>
+    <input type="button" onclick="checkPainter();" value="check the guess">
+</form>
+<p id="results">The count of the correct and wrong guess </p>
+<script> 
+var good=0;
+var oops=0; 
+function checkPainter(){
+    console.log("Getting values")
+    painter = document.getElementById("painterName").value
+    guesspainter = document.getElementById("guessPainterName").value
+    confirmed = confirm("Are these the values? "+painter+" and "+guesspainter)
+    out = document.getElementById("results")
+    if(painter == guesspainter){  
+        alert("You got it right")
+        good = good + 1
+        out.innerHTML ="Good guess:"+good+"oops:"+oops   
+    }
+    else{ 
+        
+        alert("Sorry")
+        oops=oops+1
+        out.innerHTML ="Good guess:"+good+"oops:"+oops
+    }
+}
+</script>
+</body>
+</html> 
